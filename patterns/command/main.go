@@ -28,30 +28,29 @@ func (r *RemoteControl) PressUndo() {
 	r.com.Undo()
 }
 
-// Инициатор, записывающий команды в стек и провоцирует их выполнение.
+// invoker - инициатор, записывающий команды в стек и провоцирует их выполнение
 type invoker struct {
 	commands []Command
 }
 
+// AddCommand - записывает команду в стек
 func (i *invoker) AddCommand(command Command) {
 	i.commands = append(i.commands, command)
 }
 
+// DeleteCommand - удаляет команду из стека
 func (i *invoker) DeleteCommand() {
 	if len(i.commands) > 0 {
 		i.commands = i.commands[:len(i.commands)-1]
 	}
 }
 
+// Execute - запукскает выполнение стека команд
 func (i *invoker) Execute() {
 	for _, command := range i.commands {
 		command.Execute()
 	}
 }
-
-// func (i *invoker) Undo() {
-// 	if i.commands[len(i.commands)-1] == command.Execute()
-// }
 
 // TV - структура, представляющая телевизор
 type TV struct {
@@ -160,13 +159,18 @@ func main() {
 	onPC := &PCOnCommand{device: pc}
 	offPC := &PCOffCommand{device: pc}
 
+	fmt.Println("Пример с использованием инициатора:")
+
+	// Создаем инициатор
 	invoker := &invoker{}
 
+	// Добавляем команды в стек иницаитора
 	invoker.AddCommand(onTV)
 	invoker.AddCommand(onPC)
 	invoker.AddCommand(offTV)
 	invoker.AddCommand(offPC)
 
+	// Запускаем выполение
 	invoker.Execute()
 
 	fmt.Println("Пример с использованием пульта:")
