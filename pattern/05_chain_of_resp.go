@@ -1,4 +1,4 @@
-package main
+package pattern
 
 import "fmt"
 
@@ -103,19 +103,19 @@ func NewData() *Data {
 	return &Data{}
 }
 
-func main() {
-	// Создаем обработчиков.
-	device := NewDevice("Device1")
-	updateService := NewUpdateSvc("UpdateService1")
-	saveService := NewSaveDataService()
+// func main() {
+// 	// Создаем обработчиков.
+// 	device := NewDevice("Device1")
+// 	updateService := NewUpdateSvc("UpdateService1")
+// 	saveService := NewSaveDataService()
 
-	// Строим цепочку обязанностей.
-	device.SetNext(updateService)
-	updateService.SetNext(saveService)
+// 	// Строим цепочку обязанностей.
+// 	device.SetNext(updateService)
+// 	updateService.SetNext(saveService)
 
-	// Создаем данные.
-	data := NewData()
+// 	// Создаем данные.
+// 	data := NewData()
 
-	// Передаем данные первому обработчику в цепочке.
-	device.Execute(data)
-}
+// 	// Передаем данные первому обработчику в цепочке.
+// 	device.Execute(data)
+// }

@@ -1,4 +1,4 @@
-module get_time_ntp
+module dev01
 
 go 1.22.3
 

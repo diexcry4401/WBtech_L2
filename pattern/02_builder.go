@@ -1,6 +1,4 @@
-package main
-
-import "fmt"
+package pattern
 
 // House представляет собой сложный объект, который мы хотим построить.
 type House struct {
@@ -107,39 +105,39 @@ func (d *Director) Construct() {
 	d.builder.SetDoors()
 }
 
-func main() {
-	// Создаем строителя для бетонного дома.
-	concreteBuilder := NewConcreteHouseBuilder()
+// func main() {
+// 	// Создаем строителя для бетонного дома.
+// 	concreteBuilder := NewConcreteHouseBuilder()
 
-	// Создаем директора, передавая ему строителя бетонного дома.
-	director1 := NewDirector(concreteBuilder)
+// 	// Создаем директора, передавая ему строителя бетонного дома.
+// 	director1 := NewDirector(concreteBuilder)
 
-	// Директор строит дом.
-	director1.Construct()
+// 	// Директор строит дом.
+// 	director1.Construct()
 
-	// Получаем построенный бетонный дом.
-	concreteHouse := concreteBuilder.GetHouse()
+// 	// Получаем построенный бетонный дом.
+// 	concreteHouse := concreteBuilder.GetHouse()
 
-	// Выводим детали бетонного дома.
-	fmt.Printf("Foundation: %s\n", concreteHouse.Foundation)
-	fmt.Printf("Walls: %d\n", concreteHouse.Walls)
-	fmt.Printf("Roof: %s\n", concreteHouse.Roof)
-	fmt.Printf("Doors: %d\n\n", concreteHouse.Doors)
+// 	// Выводим детали бетонного дома.
+// 	fmt.Printf("Foundation: %s\n", concreteHouse.Foundation)
+// 	fmt.Printf("Walls: %d\n", concreteHouse.Walls)
+// 	fmt.Printf("Roof: %s\n", concreteHouse.Roof)
+// 	fmt.Printf("Doors: %d\n\n", concreteHouse.Doors)
 
-	woodenBuilder := NewWoodenHouseBuilder()
+// 	woodenBuilder := NewWoodenHouseBuilder()
 
-	// Создаем директора, передавая ему строителя для деревянного дома.
-	director2 := NewDirector(woodenBuilder)
+// 	// Создаем директора, передавая ему строителя для деревянного дома.
+// 	director2 := NewDirector(woodenBuilder)
 
-	// Директор строит дом.
-	director2.Construct()
+// 	// Директор строит дом.
+// 	director2.Construct()
 
-	// Получаем построенный деревянный дом.
-	woodenHouse := woodenBuilder.GetHouse()
+// 	// Получаем построенный деревянный дом.
+// 	woodenHouse := woodenBuilder.GetHouse()
 
-	// Выводим детали деревянного дома.
-	fmt.Printf("Foundation: %s\n", woodenHouse.Foundation)
-	fmt.Printf("Walls: %d\n", woodenHouse.Walls)
-	fmt.Printf("Roof: %s\n", woodenHouse.Roof)
-	fmt.Printf("Doors: %d\n", woodenHouse.Doors)
-}
+// 	// Выводим детали деревянного дома.
+// 	fmt.Printf("Foundation: %s\n", woodenHouse.Foundation)
+// 	fmt.Printf("Walls: %d\n", woodenHouse.Walls)
+// 	fmt.Printf("Roof: %s\n", woodenHouse.Roof)
+// 	fmt.Printf("Doors: %d\n", woodenHouse.Doors)
+// }

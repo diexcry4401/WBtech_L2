@@ -1,4 +1,4 @@
-package main
+package pattern
 
 import "fmt"
 
@@ -46,16 +46,16 @@ func (e *ExportVisitor) VisitDocx(docx *DocxDocument) {
 	fmt.Printf("Export DOCX content: %s\n", docx.Content)
 }
 
-func main() {
+// func main() {
 
-	// Создаем конкретные элементы.
-	pdfFile := &PDFDocument{Content: "Some text from PDF"}
-	docxFile := &DocxDocument{Content: "Some text from DOCX"}
+// 	// Создаем конкретные элементы.
+// 	pdfFile := &PDFDocument{Content: "Some text from PDF"}
+// 	docxFile := &DocxDocument{Content: "Some text from DOCX"}
 
-	// Создаем конкретного посетителя.
-	concreteExportVisitor := &ExportVisitor{}
+// 	// Создаем конкретного посетителя.
+// 	concreteExportVisitor := &ExportVisitor{}
 
-	// Посещаем элементы с конкретным посетителем.
-	pdfFile.Accept(concreteExportVisitor)
-	docxFile.Accept(concreteExportVisitor)
-}
+// 	// Посещаем элементы с конкретным посетителем.
+// 	pdfFile.Accept(concreteExportVisitor)
+// 	docxFile.Accept(concreteExportVisitor)
+// }

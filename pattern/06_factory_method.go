@@ -1,4 +1,4 @@
-package main
+package pattern
 
 import (
 	"fmt"
@@ -55,12 +55,12 @@ func (c *concreteFactory) CreateTransport(create int) Transport {
 	return transport
 }
 
-func main() {
-	factory := NewFactory()
-	transport := factory.CreateTransport(1)
-	transport.Use()
-	transport = factory.CreateTransport(2)
-	transport.Use()
-	transport = factory.CreateTransport(3)
-	transport.Use()
-}
+// func main() {
+// 	factory := NewFactory()
+// 	transport := factory.CreateTransport(1)
+// 	transport.Use()
+// 	transport = factory.CreateTransport(2)
+// 	transport.Use()
+// 	transport = factory.CreateTransport(3)
+// 	transport.Use()
+// }

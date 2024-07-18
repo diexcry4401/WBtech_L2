@@ -1,4 +1,4 @@
-package main
+package pattern
 
 import "fmt"
 
@@ -48,10 +48,10 @@ func NewCustomerSupportFacade() *CustomerSupportFacade {
 	}
 }
 
-func main() {
-	// Создаем фасад службы поддержки клиентов.
-	customerSupport := NewCustomerSupportFacade()
+// func main() {
+// 	// Создаем фасад службы поддержки клиентов.
+// 	customerSupport := NewCustomerSupportFacade()
 
-	// Используем фасад для размещения заказа.
-	customerSupport.PlaceOrder("Laptop", 1299.99, "г.Москва, Лубянка д.4")
-}
+// 	// Используем фасад для размещения заказа.
+// 	customerSupport.PlaceOrder("Laptop", 1299.99, "г.Москва, Лубянка д.4")
+// }

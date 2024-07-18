@@ -1,4 +1,4 @@
-package main
+package pattern
 
 import "fmt"
 
@@ -146,54 +146,54 @@ func (c *PCOffCommand) Undo() {
 	c.device.On()
 }
 
-func main() {
-	// Создаем телевизор и ПК
-	tv := &TV{}
-	pc := &PC{}
+// func main() {
+// 	// Создаем телевизор и ПК
+// 	tv := &TV{}
+// 	pc := &PC{}
 
-	// Создаем команды для телевизова
-	onTV := &TVOnCommand{device: tv}
-	offTV := &TVOffCommand{device: tv}
+// 	// Создаем команды для телевизова
+// 	onTV := &TVOnCommand{device: tv}
+// 	offTV := &TVOffCommand{device: tv}
 
-	// Создаем команды для телевизова
-	onPC := &PCOnCommand{device: pc}
-	offPC := &PCOffCommand{device: pc}
+// 	// Создаем команды для телевизова
+// 	onPC := &PCOnCommand{device: pc}
+// 	offPC := &PCOffCommand{device: pc}
 
-	fmt.Println("Пример с использованием инициатора:")
+// 	fmt.Println("Пример с использованием инициатора:")
 
-	// Создаем инициатор
-	invoker := &invoker{}
+// 	// Создаем инициатор
+// 	invoker := &invoker{}
 
-	// Добавляем команды в стек иницаитора
-	invoker.AddCommand(onTV)
-	invoker.AddCommand(onPC)
-	invoker.AddCommand(offTV)
-	invoker.AddCommand(offPC)
+// 	// Добавляем команды в стек иницаитора
+// 	invoker.AddCommand(onTV)
+// 	invoker.AddCommand(onPC)
+// 	invoker.AddCommand(offTV)
+// 	invoker.AddCommand(offPC)
 
-	// Запускаем выполение
-	invoker.Execute()
+// 	// Запускаем выполение
+// 	invoker.Execute()
 
-	fmt.Println("Пример с использованием пульта:")
+// 	fmt.Println("Пример с использованием пульта:")
 
-	// Создаем пульт
-	remote := &RemoteControl{}
+// 	// Создаем пульт
+// 	remote := &RemoteControl{}
 
-	// Включаем телевизор
-	remote.SetCommand(onTV)
-	remote.PressButton() // Вывод: "TV is On"
+// 	// Включаем телевизор
+// 	remote.SetCommand(onTV)
+// 	remote.PressButton() // Вывод: "TV is On"
 
-	// Включаем ПК
-	remote.SetCommand(onPC)
-	remote.PressButton() // Вывод: "PC is On"
+// 	// Включаем ПК
+// 	remote.SetCommand(onPC)
+// 	remote.PressButton() // Вывод: "PC is On"
 
-	// Выключаем телевизор
-	remote.SetCommand(offTV)
-	remote.PressButton() // Вывод: "TV is Off"
+// 	// Выключаем телевизор
+// 	remote.SetCommand(offTV)
+// 	remote.PressButton() // Вывод: "TV is Off"
 
-	// Выключаем телевизор
-	remote.SetCommand(offPC)
-	remote.PressButton() // Вывод: "PC is Off"
+// 	// Выключаем телевизор
+// 	remote.SetCommand(offPC)
+// 	remote.PressButton() // Вывод: "PC is Off"
 
-	// Отменяем последнюю команду (включаем ПК)
-	remote.PressUndo() // Вывод: "PC is On"
-}
+// 	// Отменяем последнюю команду (включаем ПК)
+// 	remote.PressUndo() // Вывод: "PC is On"
+// }

@@ -1,4 +1,4 @@
-package main
+package pattern
 
 import "fmt"
 
@@ -111,29 +111,29 @@ func (s *NoTicketState) DispenseTicket() {
 	fmt.Println("No tickets available.")
 }
 
-func main() {
-	// Создаем автомат с 1 билетом.
-	machine1 := NewTicketMachine(1)
+// func main() {
+// 	// Создаем автомат с 1 билетом.
+// 	machine1 := NewTicketMachine(1)
 
-	// Создаем автомат с 2 билетами
-	machine2 := NewTicketMachine(2)
+// 	// Создаем автомат с 2 билетами
+// 	machine2 := NewTicketMachine(2)
 
-	fmt.Printf("Machine with 1 ticket:\n")
-	// Пробуем вставить монету и получить билет.
-	machine1.InsertCoin()
-	machine1.DispenseTicket()
+// 	fmt.Printf("Machine with 1 ticket:\n")
+// 	// Пробуем вставить монету и получить билет.
+// 	machine1.InsertCoin()
+// 	machine1.DispenseTicket()
 
-	// Пробуем вставить монету и получить билет снова, когда билеты закончились.
-	machine1.InsertCoin()
-	machine1.DispenseTicket()
+// 	// Пробуем вставить монету и получить билет снова, когда билеты закончились.
+// 	machine1.InsertCoin()
+// 	machine1.DispenseTicket()
 
-	fmt.Printf("\n")
-	fmt.Printf("Machine with 2 tickets:\n")
-	// Пробуем вставить монету и получить билет.
-	machine2.InsertCoin()
-	machine2.DispenseTicket()
+// 	fmt.Printf("\n")
+// 	fmt.Printf("Machine with 2 tickets:\n")
+// 	// Пробуем вставить монету и получить билет.
+// 	machine2.InsertCoin()
+// 	machine2.DispenseTicket()
 
-	// Пробуем вставить монету и получить билет снова.
-	machine2.InsertCoin()
-	machine2.DispenseTicket()
-}
+// 	// Пробуем вставить монету и получить билет снова.
+// 	machine2.InsertCoin()
+// 	machine2.DispenseTicket()
+// }

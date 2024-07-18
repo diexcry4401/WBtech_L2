@@ -1,4 +1,4 @@
-module grep
+module dev05
 
 go 1.22.3
 

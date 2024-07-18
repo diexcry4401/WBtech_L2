@@ -1,4 +1,4 @@
-package main
+package pattern
 
 import "fmt"
 
@@ -54,21 +54,21 @@ func (c *Context) ExecuteStrategy(arr []int) {
 	c.strategy.Sort(arr)
 }
 
-func main() {
-	// Исходный массив данных.
-	data := []int{5, 2, 9, 1, 5, 6}
+// func main() {
+// 	// Исходный массив данных.
+// 	data := []int{5, 2, 9, 1, 5, 6}
 
-	// Создаем контекст.
-	context := &Context{}
+// 	// Создаем контекст.
+// 	context := &Context{}
 
-	// Устанавливаем стратегию пузырьковой сортировки и выполняем сортировку.
-	context.SetStrategy(&BubbleSort{})
-	context.ExecuteStrategy(data)
+// 	// Устанавливаем стратегию пузырьковой сортировки и выполняем сортировку.
+// 	context.SetStrategy(&BubbleSort{})
+// 	context.ExecuteStrategy(data)
 
-	// Восстанавливаем исходный массив данных.
-	data = []int{5, 2, 9, 1, 5, 6}
+// 	// Восстанавливаем исходный массив данных.
+// 	data = []int{5, 2, 9, 1, 5, 6}
 
-	// Устанавливаем стратегию сортировки вставками и выполняем сортировку.
-	context.SetStrategy(&InsertionSort{})
-	context.ExecuteStrategy(data)
-}
+// 	// Устанавливаем стратегию сортировки вставками и выполняем сортировку.
+// 	context.SetStrategy(&InsertionSort{})
+// 	context.ExecuteStrategy(data)
+// }
